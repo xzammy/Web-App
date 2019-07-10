@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Box, Grommet } from 'grommet';
 const theme = {
   global:{
+    colors:{
+      brand:'#228BE6'
+    },
     font:{
       family: 'Roboto',
       size: '14px',
