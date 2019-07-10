@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Box, Button, Heading, Grommet } from 'grommet';
-import {Notification } from'grommet-icons';
+import { Hpe , Notification } from'grommet-icons';
 
 const theme = {
   global:{
@@ -36,6 +36,7 @@ class App extends Component {
         <AppBar>
         
          <Heading level='3' margin='none'> Sudden Impact </Heading>
+         <Hpe color='plain' />
          <Button icon={<Notification />} onClick={() =>{}}/>
         </AppBar>
       </Grommet>
