@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Box, Grommet } from 'grommet';
+import { Box, Button, Heading, Grommet } from 'grommet';
+import {Notification } from'grommet-icons';
+
 const theme = {
   global:{
     colors:{
-      brand:'#228BE6'
+      brand:'#FFFFFF'
     },
     font:{
-      family: 'Roboto',
+      family: 'Noto Serif',
       size: '14px',
       height: '20px',
     },
@@ -32,8 +34,9 @@ class App extends Component {
     return (
       <Grommet theme={theme}>
         <AppBar>
-          Hello Grommet!!!!!!
-         
+        
+         <Heading level='3' margin='none'> Sudden Impact </Heading>
+         <Button icon={<Notification />} onClick={() =>{}}/>
         </AppBar>
       </Grommet>
     );
