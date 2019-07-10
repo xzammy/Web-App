@@ -32,13 +32,18 @@ const AppBar = (props) => (
 class App extends Component {
   render() {
     return (
-      <Grommet theme={theme}>
+      <Grommet theme={theme} full>
+        <Box fill>
         <AppBar>
-        
          <Heading level='3' margin='none'> Sudden Impact </Heading>
-         <Hpe color='plain' />
          <Button icon={<Notification />} onClick={() =>{}}/>
         </AppBar>
+        <Box Direction='row' flex overflow={{horizontal:'hidden'}}>
+      <Box flex align='center' justify ='center'>
+        Some text here
+         </Box> 
+        </Box>
+        </Box>
       </Grommet>
     );
   }
