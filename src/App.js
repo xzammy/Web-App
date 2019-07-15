@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Box, Button, Collapsible, Heading, Grommet } from 'grommet';
+import{
+  Box,
+  Button,
+  Collapsible,
+  Heading,
+  Grommet,
+  Layer,
+  ResponsiveContext,
+} from 'grommet';
 import { Hpe, Notification } from 'grommet-icons';
 
 const theme = {
@@ -37,6 +45,8 @@ class App extends Component {
     const { showSidebar } = this.state;
     return (
       <Grommet theme={theme} full>
+        <ResponsiveContext.Consumer>
+        {size => (
         <Box fill>
           <AppBar>
             <Heading level='3' margin='none'> Sudden Impact </Heading>
@@ -51,7 +61,8 @@ class App extends Component {
               Some text here
          </Box>
 
-            <Collapsible direction="horizontal" open={showSidebar}>
+            {(!showSidebar || size !== 'small') ? (
+              <Collapsible direction ="horizontal" open={showSidebar}>
               <Box
                 flex
                 width='medium'
@@ -63,9 +74,23 @@ class App extends Component {
                 sidebar
           </Box>
           </Collapsible>
-           
+
+            ):(
+              <Layer>
+                <Box
+                fill
+                background='light-2'
+                align='center'
+                justify='center'
+                >
+                  sidebar
+                </Box>
+              </Layer>
+            )}
           </Box>
         </Box>
+        )}
+        </ResponsiveContext.Consumer>
       </Grommet>
     );
   }
