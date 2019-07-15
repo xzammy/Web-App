@@ -9,6 +9,12 @@ import {
   ResponsiveContext,
 } from 'grommet';
 import { FormClose, Notification } from 'grommet-icons';
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
+import Ripples from 'react-ripples'
+
+
+
 
 const theme = {
   global: {
@@ -20,8 +26,21 @@ const theme = {
       size: '14px',
       height: '20px',
     },
+    button: {
+      border: {
+        width: '1px',
+        radius: '4px',
+      },
+      padding: {
+        vertical: '8px',
+        horizontal: '16px',
+      },
+    },
   },
 };
+
+
+
 
 
 const AppBar = (props) => (
@@ -36,6 +55,8 @@ const AppBar = (props) => (
     {...props}
   />
 );
+
+
 
 class App extends Component {
   state = {
@@ -58,8 +79,24 @@ class App extends Component {
               </AppBar>
               <Box Direction='row' flex overflow={{ horizontal: 'hidden' }}>
                 <Box flex align='center' justify='center'>
-                  Some text here
-         </Box>
+
+                  <h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </h2>
+
+                  <Ripples>
+                    <button type="button" className="btn btn-primary" color="000000">
+                      Development Mode
+                    </button>
+                  </Ripples>
+
+
+                </Box>
+
+
+              </Box>
+              <Box>
+
 
                 {(!showSidebar || size !== 'small') ? (
                   <Collapsible direction="horizontal" open={showSidebar}>
