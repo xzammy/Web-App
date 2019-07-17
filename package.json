@@ -14,7 +14,10 @@
     "react-epic-spinners": "^0.3.0",
     "react-final-form": "^6.3.0",
     "react-is": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-rte": "^0.16.1",
     "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2"
   },
   "scripts": {

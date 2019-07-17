@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-header {
@@ -17,7 +21,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .App-link {
@@ -40,7 +44,7 @@ body {
 }
 
 #App {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   height: 100vh;
 }
 
@@ -100,17 +104,36 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
+
+html {
+  background: #f6faff;
+}
+
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  margin: 0.5rem;
+  background: #f3edd6;
+  border: 3px solid #b59214;
+  color: #b59214;
+  padding: 5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.wrapper {
   display: grid;
+  grid-template-columns: 200px 200px 200px;
+}* {box-sizing: border-box;}
 
-  grid-template-areas:
-    "header header header"
-    "nav content side"
-    "footer footer footer";
-
-  grid-template-columns: 200px 1fr 200px;
-  grid-template-rows: auto 1fr auto;
-  grid-gap: 10px;
-
-  height: 100vh;
+.grid-container {
+  display: grid;
+  grid-column-gap: 1000px;
+}
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
 }

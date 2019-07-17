@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import {
   Box,
   Button,
-  Collapsible,
-  Heading,
   Grommet,
   Layer,
+  Tabs,
   Grid,
   Text,
-  ResponsiveContext,
+  TextArea
 } from 'grommet';
 import { FormClose, Home } from 'grommet-icons';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -16,12 +15,10 @@ import './App.css';
 import { FulfillingBouncingCircleSpinner } from 'react-epic-spinners';
 import { push as Menu } from 'react-burger-menu'
 import SideBar from './sidebar';
-
-
 import { storiesOf } from "@storybook/react";
-
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import { grommet } from "grommet/themes";
-
+import { Form, Col, Row } from 'react-bootstrap';
 
 
 const theme = {
@@ -30,7 +27,7 @@ const theme = {
       brand: '#FFFFFF'
     },
     font: {
-      family: 'Noto Serif',
+      family: 'Lato',
       size: '14px',
       height: '20px',
     },
@@ -46,6 +43,8 @@ const theme = {
     },
   },
 };
+
+
 
 const AppBar = (props) => (
   <Box
@@ -191,7 +190,9 @@ const AppBar = (props) => (
 // }
 
 
-
+function Example() {
+  const [value, setValue] = React.useState('');
+}
 
 class AppGrid extends Component {
   state = { sidebar: true };
@@ -215,19 +216,19 @@ class AppGrid extends Component {
             direction="row"
             align="center"
             justify="between"
-            pad={{ horizontal: "medium", vertical: "small" }}
-            background="dark-2"
+            pad={{ horizontal: "medium", vertical: "medium" }}
+            background="light-3"
           >
             <Button onClick={() => this.setState({ sidebar: !sidebar })}>
-              <Text size="large">SuddenImpact</Text>
+              <Text size="xlarge">SuddenImpact</Text>
             </Button>
             <Text>my@email</Text>
           </Box>
           {sidebar && (
             <Box
               gridArea="sidebar"
-              background="dark-3"
-              width="small"
+              background="light-2"
+              width="medium"
               animation={[
                 { type: "fadeIn", duration: 300 },
                 { type: "slideRight", size: "xlarge", duration: 150 }
@@ -242,8 +243,39 @@ class AppGrid extends Component {
               ))}
             </Box>
           )}
-          <Box gridArea="main" justify="center" align="center">
-            <Text>main</Text>
+          <Box gridArea="main" justify="start" align="stretch">
+
+            <div class="container">
+
+
+              <Form>
+                <Form.Group as={Row} controlId="formPlaintextEmail">
+                  <Form.Label column sm="2">
+                    Email
+    </Form.Label>
+                  <Col sm="10">
+                    <Form.Control plaintext readOnly defaultValue="email@example.com" />
+                  </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Form.Label column sm="2">
+                    Password
+    </Form.Label>
+                  <Col sm="10">
+                    <Form.Control type="password" placeholder="Password" />
+                  </Col>
+                </Form.Group>
+              </Form>
+              <div class="content">
+                Test
+              <TextArea></TextArea></div>
+
+            </div>
+
+
+
+
           </Box>
         </Grid>
       </Grommet>
