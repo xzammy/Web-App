@@ -34,3 +34,12 @@ background{
 .item:nth-child(3n) {
   width: 100%;
 }
+
+#sidebar {
+  position: fixed;
+  background-color: blue;
+  top: 108px;
+  height: calc(100% - 100px);
+  width: 128px;
+  border-right: 10px solid black;
+}
