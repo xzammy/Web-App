@@ -8,10 +8,10 @@ import {
   Layer,
   ResponsiveContext,
 } from 'grommet';
-import { FormClose, Notification } from 'grommet-icons';
+import { FormClose, Home } from 'grommet-icons';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import Ripples from 'react-ripples'
+import {FulfillingBouncingCircleSpinner} from 'react-epic-spinners';
 
 
 
@@ -38,10 +38,6 @@ const theme = {
     },
   },
 };
-
-
-
-
 
 const AppBar = (props) => (
   <Box
@@ -70,34 +66,19 @@ class App extends Component {
           {size => (
             <Box fill>
               <AppBar>
-                <Heading level='3' margin='none'> Sudden Impact </Heading>
-
+                <Heading margin="none">Sudden Impact</Heading>
                 <Button
-                  icon={<Notification />}
+                  icon={<Home />}
                   onClick={() => this.setState(prevState => ({ showSidebar: !prevState.showSidebar }))}
                 />
               </AppBar>
               <Box Direction='row' flex overflow={{ horizontal: 'hidden' }}>
                 <Box flex align='center' justify='center'>
-
-                  <h2>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </h2>
-
-                  <Ripples>
-                    <button type="button" className="btn btn-primary" color="000000">
-                      Development Mode
-                    </button>
-                  </Ripples>
-
-
+                  <FulfillingBouncingCircleSpinner color="black">
+                  </FulfillingBouncingCircleSpinner>
                 </Box>
-
-
               </Box>
               <Box>
-
-
                 {(!showSidebar || size !== 'small') ? (
                   <Collapsible direction="horizontal" open={showSidebar}>
                     <Box
@@ -126,8 +107,6 @@ class App extends Component {
                           onClick={() => this.setState({ showSidebar: false })}
                         />
                       </Box>
-
-
 
                       <Box
                         fill
