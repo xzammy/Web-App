@@ -16,7 +16,7 @@
     "react-is": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-rte": "^0.16.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2"
   },
@@ -43,6 +43,6 @@
   },
   "devDependencies": {
     "@storybook/addon-info": "^5.1.9",
-    "@storybook/react": "^5.1.9"
+    "@storybook/react": "^6.5.13"
   }
 }
